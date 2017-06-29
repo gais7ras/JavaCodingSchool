@@ -8,6 +8,11 @@ import java.util.Scanner;
 *5. Vartotojas atlikes operacija, gali nuspresti ar testi darba
 *6. Atsakyme po kablelio 2 skaitmenys
 *7. Parasyti su switch
+*8. Panaudoti funkcijas: 
+* a) funkcija grazinanti reiksme su parametrais
+* b) funkcija grazinanti be parametru
+* c) negrazinanti su parametrais
+* d) negrazinanti reiksmes be parametru
 */
 
 // IF
@@ -121,7 +126,7 @@ public class Calculator {
 	public static void main(String[] args) {
 		System.out.println("Skaiciuotuvas");
 		
-		double skaicius1, skaicius2, atsakymas;
+		double skaicius1, skaicius2;
 		char symbol = 'T';
 		
 		while(symbol == 'T')
@@ -143,10 +148,10 @@ public class Calculator {
 				case '+': System.out.println(skaicius1 + " + " + skaicius2 + " = " + sudeti(skaicius1, skaicius2) );
 					break;
 					
-				case '-': System.out.println(skaicius1 + " - " + skaicius2 + " = " + atimti(skaicius1, skaicius2) );
+				case '-': atimti(skaicius1, skaicius2);
 					break;
 					
-				case '*': System.out.println(skaicius1 + " * " + skaicius2 + " = " + dauginti(skaicius1, skaicius2));
+				case '*': System.out.println(skaicius1 + " * " + skaicius2 + " = " + dauginti());
 					break;
 					
 				case '/': 
@@ -168,19 +173,40 @@ public class Calculator {
 	{
 		return skaicius1 + skaicius2;
 	}
-	
-	static double atimti(double skaicius1, double skaicius2)
+		
+	// Nieko negrazina su parametrais
+	static void atimti(double skaicius1, double skaicius2)
 	{
-		return skaicius1 - skaicius2;
+		double atsakymas = skaicius1 - skaicius2;
+		System.out.println(skaicius1 + " - " + skaicius2 + " = " + atsakymas);
 	}
 	
-	static double dauginti(double skaicius1, double skaicius2)
+	//Grazina nepaduodant parametru
+	
+	static double dauginti()
 	{
+		System.out.println("Iveskite pirmaji skaiciu");
+		Scanner S = new Scanner(System.in);
+		double skaicius1 = S.nextDouble();
+		
+		System.out.println("Iveskite antraji skaiciu");
+		double skaicius2 = S.nextDouble();
 		return skaicius1 * skaicius2;
 	}
-	
-	static double dalinti(double skaicius1, double skaicius2)
+	// Negrazina ir nepaduodant parametru
+	static void dalinti()
 	{
-		return skaicius1/skaicius2;
+		System.out.println("Iveskite pirmaji skaiciu");
+		Scanner S = new Scanner(System.in);
+		double skaicius1 = S.nextDouble();
+		
+		System.out.println("Iveskite antraji skaiciu");
+		double skaicius2 = S.nextDouble();
+		
+		double atsakymas = skaicius1/skaicius2;
+		System.out.println(skaicius1 + " - " + skaicius2 + " = " + atsakymas);
+		
+		
+		
 	}
 }
