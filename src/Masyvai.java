@@ -10,6 +10,8 @@ public class Masyvai {
 		System.out.println("Masyvo neigiamu skaiciu kiekis: " + skaiciuotiNeigKieki(masyvas));
 		
 		System.out.println("Masyvo teigiamu skaiciu sandauga: " + skaiciuotiTeigSandauga(masyvas));		
+		
+		System.out.println("Masyvo teigiamu skaiciu sandauga: " + surastiMax(masyvas));		
 
 	}
 	
@@ -49,6 +51,19 @@ public class Masyvai {
 			}
 		}
 		return sandauga;
+	}
+	
+	static int surastiMax(int masyvas[])
+	{
+		int max = masyvas[0];
+		for(int i = 0; i < masyvas.length; i++)
+		{
+			if(masyvas[i] > max)
+			{
+				max = masyvas[i];
+			}
+		}
+		return max;
 	}
 	
 
