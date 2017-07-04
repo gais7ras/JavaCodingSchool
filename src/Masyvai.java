@@ -13,7 +13,7 @@ public class Masyvai {
 
 	}
 	
-	public static int skaiciuotiSuma(int masyvas[])
+	static int skaiciuotiSuma(int masyvas[])
 	{
 		int suma=0;
 		for(int i = 0; i < masyvas.length; i++)
